@@ -1,8 +1,16 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
 * .num {
 
-    font-size: 48px;
+    font-size: 32px;
     padding: 20px 30px;
-    margin: 10px 8px;
+    margin: 4px 4px;
     color: #29A8FF;
     background-color: #303136;
     border-radius: 16px;
@@ -19,6 +27,38 @@
     background-color: #303136;
     border-radius: 16px;
     border-style: none;
+
+
+}
+
+#container {
+
+    display: grid;
+    
+    width: 375px;
+    height: 812px;
+    background-color: #17181A;
+    border-radius: 39px;
+
+}
+
+#nums-container {
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    
+}
+
+#tela {
+
+    width: 300px;
+    height: 300px;
+    font-family: arial;
+    color: white;
+    font-size: 56px;
+    text-align: end;
     
 
 }
