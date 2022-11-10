@@ -1,4 +1,6 @@
-function adicionaNaTela() {
+function adicionaNaTela(n) {
+
+    document.querySelector('#tela-nums').innerHTML = n;
 
 }
 
@@ -12,7 +14,7 @@ function criaBotão(n) {
     
     }
     else{
-        return `<div class="div${n}"><button onclick="adicionaNaTela()">${n}</button></div>`
+        return `<div class="div${n}"><button onclick="adicionaNaTela(${n})">${n}</button></div>`
     }
     
     }
