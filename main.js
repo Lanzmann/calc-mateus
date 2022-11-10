@@ -1,6 +1,6 @@
 function criaBotão(n) {
 
-    return `<div class="div${n}"><button class ="num" onclick="">${n}</button></div>`
+    return `<div class="div${n}"><button onclick="">${n}</button></div>`
     
 }
 
