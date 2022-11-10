@@ -4,8 +4,18 @@ function adicionaNaTela() {
 
 
 function criaBotão(n) {
-    return `<div class="div${n}"><button onclick="adicionaNaTela()">${n}</button></div>`
-}
+    
+    if (n == "<-")
+    {
+        return `<div class="div<-"><button onclick="adicionaNaTela()"><img src="ico.svg">
+        </button></div>`
+    
+    }
+    else{
+        return `<div class="div${n}"><button onclick="adicionaNaTela()">${n}</button></div>`
+    }
+    
+    }
 
 document.querySelector('#tela').innerHTML =
     '<div id="tela-nums">AB</div><div id="tela-op">CD</div>'
