@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "poppins";
 }
 
 body {
@@ -89,7 +90,6 @@ button {
 #tela {
   display: grid;
   grid-template-rows: 2fr 1fr;
-  font-family: arial;
   text-align: end;
 }
 
