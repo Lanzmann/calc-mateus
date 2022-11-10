@@ -1,5 +1,10 @@
+function adicionaNaTela() {
+
+}
+
+
 function criaBotão(n) {
-    return `<div class="div${n}"><button onclick="">${n}</button></div>`
+    return `<div class="div${n}"><button onclick="adicionaNaTela()">${n}</button></div>`
 }
 
 document.querySelector('#tela').innerHTML =
