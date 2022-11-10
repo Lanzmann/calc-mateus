@@ -42,8 +42,8 @@ button {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: end;
-    align-items: end;
+    justify-items: center;
+    align-items: center;
     gap: 3px;
     padding: 30px 30px;
 }
@@ -77,6 +77,37 @@ button {
     /* grid-row: 5 / 7; */
     height: 100%;
     /* padding: 10px 10px; */
+    background-color: #1991FF;
+    color: white;
+
+}
+
+.div\/ button, 
+.div\* button,
+.div- button,
+.div\+ button{
+
+    background-color: #005DB2;
+
+
+}
+
+.divAc button,
+.div\<- button{
+    
+    background-color: #616161;
+    color: #A5A5A5;
+
+}
+
+.dive button,
+.divµ button,
+.divsin button,
+.divdeg button{
+
+    border-radius: 24px;
+    height: 38px;
+    font-size: 20px;
 
 }
 
