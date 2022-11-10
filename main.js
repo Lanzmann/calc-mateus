@@ -4,10 +4,7 @@ var botoesClicados = new Array();
 
 function constroiNum(n) {
 
-    numero = n.join('');
-
-    numerosNaTela = [];
-    numerosNaTela[0] = numero;
+    numero = botoesClicados.join('');
 
     return numero;
 
@@ -16,6 +13,20 @@ function constroiNum(n) {
 
 
 function clicaBotão(n) {
+
+    console.log("botão clicado: " + n);
+
+    botoesClicados.push(n);
+
+    if (typeof n === 'number')
+    {
+
+        num = constroiNum(botoesClicados);
+
+        numerosNaTela.push(num);
+        
+        atualizaTelaNums();
+    }
 
     if (n == "Ac")
     {
@@ -30,25 +41,12 @@ function clicaBotão(n) {
 
         atualizaTelaNums();
     }
-    else
-    {
 
-        console.log("botão clicado: " + n)
-
-        botoesClicados.push(n); 
-        
-        num = constroiNum(botoesClicados);
-
-        numerosNaTela.push(num);
-        
-        atualizaTelaNums();
-    }
-  
 }
 
 function atualizaTelaNums(){
 
-    document.querySelector('#tela-nums').innerHTML = numerosNaTela[0];
+    document.querySelector('#tela-nums').innerHTML = numerosNaTela.slice(-1);
 
     console.log("tela atualizada");
 
