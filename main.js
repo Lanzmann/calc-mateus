@@ -1,37 +1,58 @@
-var naTela = new Array();
+var numerosNaTela = new Array();
+var botoesClicados = new Array();
+
+
+function constroiNum(n) {
+
+    numero = n.join('');
+
+    numerosNaTela = [];
+    numerosNaTela[0] = numero;
+
+    return numero;
+
+}
+
+
 
 function clicaBotão(n) {
 
     if (n == "Ac")
     {
-        naTela.length = 0;
+        numerosNaTela.length = 0;
 
-        atualizaTela();
+        atualizaTelaNums();
     }
     else if (n == "bkspc")
     {
         console.log("oi");
-        naTela.pop();
+        botoesClicados.pop();
 
-        atualizaTela();
+        atualizaTelaNums();
     }
     else
     {
-        naTela.push(n);
 
-        atualizaTela();
+        console.log("botão clicado: " + n)
+
+        botoesClicados.push(n); 
+        
+        num = constroiNum(botoesClicados);
+
+        numerosNaTela.push(num);
+        
+        atualizaTelaNums();
     }
   
-
 }
 
-function atualizaTela(){
+function atualizaTelaNums(){
 
-    document.querySelector('#tela-nums').innerHTML = naTela;
+    document.querySelector('#tela-nums').innerHTML = numerosNaTela[0];
 
     console.log("tela atualizada");
 
-    console.log(naTela)
+    console.log("nums na tela:" + numerosNaTela);
 
 }
 
