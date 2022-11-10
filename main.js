@@ -1,14 +1,9 @@
 function criaBotão(n) {
-
     return `<div class="div${n}"><button onclick="">${n}</button></div>`
-    
 }
 
-
-
 document.querySelector('#tela').innerHTML =
-    "T e l a"
-
+    '<div id="tela-nums">AB</div><div id="tela-op">CD</div>'
 
 document.querySelector('#botoes-container').innerHTML =
     criaBotão("e") +
