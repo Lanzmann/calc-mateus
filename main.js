@@ -1,31 +1,9 @@
-function criaBotãoNum(n) {
+function criaBotão(n) {
 
-    if (n == 0)
-    {
-        return `<div class="zero"><button class ="num" onclick="">${n}</button></div>`
-    }
-    else
-    {
-        return `<div><button class ="num" onclick="">${n}</button></div>`
-    } 
+    return `<div class="div${n}"><button class ="num" onclick="">${n}</button></div>`
+    
 }
 
-
-function criaBotãoOp(op) {
-    return `<div><button class ="op" onclick="">${op}</button></div>`
-}
-
-function criaBotãoCanc(a){
-    return `<button class="canc" onclick="">${a}</button>`
-}
-
-function criaBotãoIgual(){
-    return `<button class="canc" onclick="">=</button>`
-}
-
-function criaBotãoFunc(f){
-    return `<button class="canc" onclick="">${f}</button>`
-}
 
 
 document.querySelector('#tela').innerHTML =
@@ -33,19 +11,19 @@ document.querySelector('#tela').innerHTML =
 
 
 document.querySelector('#nums-container').innerHTML =
-    criaBotãoNum(1) +
-    criaBotãoNum(2) +
-    criaBotãoNum(3) +
-    criaBotãoNum(4) +
-    criaBotãoNum(5) +
-    criaBotãoNum(6) +
-    criaBotãoNum(7) +
-    criaBotãoNum(8) +
-    criaBotãoNum(9) +
-    criaBotãoNum(0) +
-    criaBotãoNum(".")
+    criaBotão(1) +
+    criaBotão(2) +
+    criaBotão(3) +
+    criaBotão(4) +
+    criaBotão(5) +
+    criaBotão(6) +
+    criaBotão(7) +
+    criaBotão(8) +
+    criaBotão(9) +
+    criaBotão(0) +
+    criaBotão(".")
 
 document.querySelector('#ops-container-vert').innerHTML =
-    criaBotãoOp("-") +
-    criaBotãoOp("+") +
-    criaBotãoOp("=")
+    criaBotão("-") +
+    criaBotão("+") +
+    criaBotão("=")
