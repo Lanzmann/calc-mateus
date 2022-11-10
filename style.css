@@ -29,7 +29,6 @@ button {
 #container {
 
     display: grid;
-    
     width: 375px;
     height: 812px;
     background-color: #17181A;
@@ -38,28 +37,46 @@ button {
 }
 
 #botoes-container {
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: end;
     align-items: end;
     gap: 3px;
+    padding: 30px 30px;
 }
 
 
 .div0 {
 
     grid-column: 1 / 3;
-    width: 100%;
-    padding: 10px 10px;
+    width: 90%;
+    /* padding: 30px 10px; */
 
 }
 
 .div0 button {
 
     width: 100%;
+
+}
+
+.div\= {
+
+    grid-row: 5 / 7;
+    grid-column: 4;
+    height: 100%;
+    /* padding: 10px 10px; */
+
+}
+
+.div\= button {
+
+    /* grid-row: 5 / 7; */
+    height: 100%;
+    /* padding: 10px 10px; */
 
 }
 
