@@ -10,20 +10,27 @@ document.querySelector('#tela').innerHTML =
     "T e l a"
 
 
-document.querySelector('#nums-container').innerHTML =
-    criaBotão(1) +
-    criaBotão(2) +
-    criaBotão(3) +
-    criaBotão(4) +
-    criaBotão(5) +
-    criaBotão(6) +
+document.querySelector('#botoes-container').innerHTML =
+    criaBotão("e") +
+    criaBotão("µ") +
+    criaBotão("sin") +
+    criaBotão("deg") +
+    criaBotão("Ac") +
+    criaBotão("<-") +
+    criaBotão("/") +
+    criaBotão("*") +
     criaBotão(7) +
     criaBotão(8) +
     criaBotão(9) +
+    criaBotão("-") +
+    criaBotão(4) +
+    criaBotão(5) +
+    criaBotão(6) +
+    criaBotão("+") +
+    criaBotão(1) +
+    criaBotão(2) +
+    criaBotão(3) +
+    criaBotão("=") +
     criaBotão(0) +
     criaBotão(".")
 
-document.querySelector('#ops-container-vert').innerHTML =
-    criaBotão("-") +
-    criaBotão("+") +
-    criaBotão("=")
