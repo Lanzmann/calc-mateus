@@ -1,15 +1,21 @@
 var numerosNaTela = new Array();
 var botoesClicados = new Array();
-
+var numeral = new Array();
 
 function constroiNum(n) {
+    
+    numeral.push(n);
 
-    numero = botoesClicados.join('');
+    console.log("numeral é: " + numeral)
+    console.log("agora n é: " + n)
+
+    var numero = numeral.join('');
+
+    console.log("join de:" + numero);
 
     return numero;
 
 }
-
 
 
 function clicaBotão(n) {
@@ -18,29 +24,45 @@ function clicaBotão(n) {
 
     botoesClicados.push(n);
 
+    console.log("botoes clicados: " + botoesClicados);
+
     if (typeof n === 'number')
     {
 
-        num = constroiNum(botoesClicados);
+        num = constroiNum(n);
+
+        console.log("colocando isso na tela: " + num)
 
         numerosNaTela.push(num);
         
         atualizaTelaNums();
     }
-
-    if (n == "Ac")
+    else if (typeof n === 'string')
     {
-        numerosNaTela.length = 0;
+        if (n == "Ac")
+        {
+            numerosNaTela.length = 0;
+            botoesClicados.length = 0;
+            numeral.length = 0;
+    
+            atualizaTelaNums();
+        }
+        else if (n == "bkspc")
+        {
+            
+            numerosNaTela.pop();
+            numeral.pop();
+               
+            atualizaTelaNums();
+        }
+        else if (n == "+" || n == "-" || n == "*" || n == "/")
+        {
 
-        atualizaTelaNums();
-    }
-    else if (n == "bkspc")
-    {
-        console.log("oi");
-        botoesClicados.pop();
 
-        atualizaTelaNums();
+        }
+    
     }
+
 
 }
 
@@ -50,7 +72,7 @@ function atualizaTelaNums(){
 
     console.log("tela atualizada");
 
-    console.log("nums na tela:" + numerosNaTela);
+    console.log("nums na memória:" + numerosNaTela);
 
 }
 
