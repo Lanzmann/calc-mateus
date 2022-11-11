@@ -1,6 +1,8 @@
-var numerosNaTela = new Array();
+var numerosNaMemoria = new Array();
+var operacoes = new Array ();
 var botoesClicados = new Array();
 var numeral = new Array();
+var tela = new Array();
 
 function constroiNum(n) {
     
@@ -33,7 +35,7 @@ function clicaBotão(n) {
 
         console.log("colocando isso na tela: " + num)
 
-        numerosNaTela.push(num);
+        numerosNaMemoria.push(num);
         
         atualizaTelaNums();
     }
@@ -41,8 +43,8 @@ function clicaBotão(n) {
     {
         if (n == "Ac")
         {
-            numerosNaTela.length = 0;
-            botoesClicados.length = 0;
+            numerosNaMemoria.length = 0;
+            // botoesClicados.length = 0;
             numeral.length = 0;
     
             atualizaTelaNums();
@@ -50,29 +52,33 @@ function clicaBotão(n) {
         else if (n == "bkspc")
         {
             
-            numerosNaTela.pop();
+            numerosNaMemoria.pop();
             numeral.pop();
                
             atualizaTelaNums();
         }
         else if (n == "+" || n == "-" || n == "*" || n == "/")
         {
+           
+            numerosNaMemoria.push(num);
 
+            atualizaTelaNums();
 
         }
     
     }
 
-
 }
 
 function atualizaTelaNums(){
 
-    document.querySelector('#tela-nums').innerHTML = numerosNaTela.slice(-1);
+    tela = numerosNaMemoria.slice(-1) + 
+
+    document.querySelector('#tela-nums').innerHTML = tela;
 
     console.log("tela atualizada");
 
-    console.log("nums na memória:" + numerosNaTela);
+    console.log("nums na memória:" + numerosNaMemoria);
 
 }
 
