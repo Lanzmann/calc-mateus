@@ -94,6 +94,8 @@ button {
 }
 
 #tela-nums {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   color: grey;
   padding: 140px 30px 0px 30px;
   font-size: 26px;

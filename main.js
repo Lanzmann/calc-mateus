@@ -4,83 +4,86 @@ var botoesClicados = new Array();
 var numeral = new Array();
 var tela = new Array();
 
-function constroiNum(n) {
+
+// function constroiNum(n) {
     
-    numeral.push(n);
+//     numeral.push(n);
 
-    console.log("numeral é: " + numeral)
-    console.log("agora n é: " + n)
+//     console.log("numeral é: " + numeral)
+//     console.log("agora n é: " + n)
 
-    var numero = numeral.join('');
+//     var numero = numeral.join('');
 
-    console.log("join de:" + numero);
+//     console.log("join de:" + numero);
 
-    return numero;
+//     return numero;
 
-}
+// }
 
 
-function clicaBotão(n) {
+// function clicaBotão(n) {
 
-    console.log("botão clicado: " + n);
+//     console.log("botão clicado: " + n);
 
-    botoesClicados.push(n);
+//     botoesClicados.push(n);
 
-    console.log("botoes clicados: " + botoesClicados);
+//     console.log("botoes clicados: " + botoesClicados);
 
-    if (typeof n === 'number')
-    {
+//     if (typeof n === 'number')
+//     {
 
-        num = constroiNum(n);
+//         num = constroiNum(n);
 
-        console.log("colocando isso na tela: " + num)
+//         console.log("colocando isso na tela: " + num)
 
-        numerosNaMemoria.push(num);
+//         numerosNaMemoria.push(num);
         
-        atualizaTelaNums();
-    }
-    else if (typeof n === 'string')
-    {
-        if (n == "Ac")
-        {
-            numerosNaMemoria.length = 0;
-            // botoesClicados.length = 0;
-            numeral.length = 0;
+//         atualizaTelaNums();
+//     }
+//     else if (typeof n === 'string')
+//     {
+//         if (n == "Ac")
+//         {
+//             numerosNaMemoria.length = 0;
+//             // botoesClicados.length = 0;
+//             numeral.length = 0;
     
-            atualizaTelaNums();
-        }
-        else if (n == "bkspc")
-        {
+//             atualizaTelaNums();
+//         }
+//         else if (n == "bkspc")
+//         {
             
-            numerosNaMemoria.pop();
-            numeral.pop();
+//             numerosNaMemoria.pop();
+//             numeral.pop();
                
-            atualizaTelaNums();
-        }
-        else if (n == "+" || n == "-" || n == "*" || n == "/")
-        {
+//             atualizaTelaNums();
+//         }
+//         else if (n == "+" || n == "-" || n == "*" || n == "/")
+//         {
            
-            numerosNaMemoria.push(num);
+//             op1 = numerosNaMemoria.slice(-1);
 
-            atualizaTelaNums();
+//             document.querySelector("#tela-nums2").innerHTML = op1;
 
-        }
+//             atualizaTelaNums();
+
+//         }
     
-    }
+//     }
 
-}
+// }
 
-function atualizaTelaNums(){
+// function atualizaTelaNums(){
 
-    tela = numerosNaMemoria.slice(-1) + 
+//     tela = numerosNaMemoria.slice(-1)
 
-    document.querySelector('#tela-nums').innerHTML = tela;
+//     document.querySelector('#tela-nums').innerHTML = tela;
 
-    console.log("tela atualizada");
+//     console.log("tela atualizada");
 
-    console.log("nums na memória:" + numerosNaMemoria);
+//     console.log("nums na memória:" + numerosNaMemoria);
 
-}
+// }
 
 function criaBotão(n) {
     
@@ -102,7 +105,7 @@ function criaBotão(n) {
 }
 
 document.querySelector('#tela').innerHTML =
-    '<div id="tela-nums">AB</div><div id="tela-op">CD</div>'
+    '<div id="tela-nums">AB<div id="tela-nums2">ab</div></div><div id="tela-op">CD</div>'
 
 document.querySelector('#botoes-container').innerHTML =
     criaBotão("e") +
