@@ -1,12 +1,11 @@
 var numerosNaMemoria = new Array();
-var operacoes = new Array ();
+var operacoes = new Array();
 var botoesClicados = new Array();
 var numeral = new Array();
 var tela = new Array();
 
-
 // function constroiNum(n) {
-    
+
 //     numeral.push(n);
 
 //     console.log("numeral é: " + numeral)
@@ -29,39 +28,34 @@ var tela = new Array();
 
 //     console.log("botoes clicados: " + botoesClicados);
 
-//     if (typeof n === 'number')
-//     {
+    // if (typeof n === 'number') {
 
 //         num = constroiNum(n);
 
 //         console.log("colocando isso na tela: " + num)
 
-//         numerosNaMemoria.push(num);
-        
-//         atualizaTelaNums();
-//     }
-//     else if (typeof n === 'string')
-//     {
-//         if (n == "Ac")
-//         {
-//             numerosNaMemoria.length = 0;
-//             // botoesClicados.length = 0;
-//             numeral.length = 0;
-    
-//             atualizaTelaNums();
-//         }
-//         else if (n == "bkspc")
-//         {
-            
-//             numerosNaMemoria.pop();
-//             numeral.pop();
-               
-//             atualizaTelaNums();
-//         }
-//         else if (n == "+" || n == "-" || n == "*" || n == "/")
-//         {
-           
-//             op1 = numerosNaMemoria.slice(-1);
+    //     numerosNaMemoria.push(num);
+
+    //     atualizaTelaNums();
+    // }
+    // else if (typeof n === 'string') {
+    //     if (n == "Ac") {
+    //         numerosNaMemoria.length = 0;
+    //         // botoesClicados.length = 0;
+    //         numeral.length = 0;
+
+    //         atualizaTelaNums();
+    //     }
+    //     else if (n == "bkspc") {
+
+    //         numerosNaMemoria.pop();
+    //         numeral.pop();
+
+    //         atualizaTelaNums();
+    //     }
+    //     else if (n == "+" || n == "-" || n == "*" || n == "/") {
+
+    //         numerosNaMemoria.push(num);
 
 //             document.querySelector("#tela-nums2").innerHTML = op1;
 
@@ -70,14 +64,16 @@ var tela = new Array();
 //         }
     
 //     }
-
+ 
 // }
 
-// function atualizaTelaNums(){
+function atualizaTelaNums() {
 
-//     tela = numerosNaMemoria.slice(-1)
+    /*tela = numerosNaMemoria.slice(-1) + */
 
-//     document.querySelector('#tela-nums').innerHTML = tela;
+    document.querySelector('#tela-nums').innerHTML = numerosNaMemoria.slice(-1);
+
+}
 
 //     console.log("tela atualizada");
 
@@ -86,22 +82,19 @@ var tela = new Array();
 // }
 
 function criaBotão(n) {
-    
-    if (typeof n === 'string')
-    {
-        if (n == "bkspc")
-        {
+
+    if (typeof n === 'string') {
+        if (n == "bkspc") {
             return `<div class="div${n}"><button onclick="clicaBotão('${n}')"><img src="ico.svg"></button></div>`
         }
-        
+
         return `<div class="div${n}"><button onclick="clicaBotão('${n}')">${n}</button></div>`
-    
+
     }
-    else
-    {
+    else {
         return `<div class="div${n}"><button onclick="clicaBotão(${n})">${n}</button></div>`
     }
-    
+
 }
 
 document.querySelector('#tela').innerHTML =
