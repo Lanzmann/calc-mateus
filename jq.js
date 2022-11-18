@@ -1,2 +1,2 @@
-import jQuery from "jQuery";
+
 
