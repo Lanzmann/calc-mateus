@@ -77,87 +77,59 @@ function atualizaTelaNums() {
 
 }
 
-//     console.log("tela atualizada");
+document.querySelector('#tela').innerHTML =
+    '<div id="tela-nums"></div><div id="tela-op"></div>'
 
-//     console.log("nums na memória:" + numerosNaMemoria);
+resultado = $("#tela-op");
+var operando = false;
+var op = "";
 
-// }
+//mostra na tela valor do HTML do botão clicado
 
+jQuery(function(){$(".btn-num").on("click", function(){
+    $("#tela-nums").append(($(this).html()))})});
 
+jQuery(function(){$(".btn-op").on("click", function(){
+    if (operando == false)
+    {
+        op = $(this).html();
+        $("#tela-nums").append(($(this).html()));
+        operando = true;
+    } 
+})});
+
+jQuery(function(){$(".btn-eq").on("click", function(){
+        let operandos = $("#tela-nums").html().split(op);
+        console.log(operandos);
+})});
+
+//cria botão com a regra diferente para operadores
 function criaBotão(n) {
+      
+        if (typeof n === "string")
+        {
+            if (n == "bkspc") {
 
-    if (typeof n === 'string') {
-        if (n == "bkspc") {
-            return `<div class="div${n}"><button><img src="ico.svg"></button></div>`
+                return `<div class="div${n}"><button class="${n}"><img src="ico.svg"></button></div>`
+            }
+
+            if (n == "=") {
+
+                return `<div class="div${n}"><button class="btn-eq">${n}</button></div>`
+            }
+
+            return `<div class="div${n}"><button class="btn-op">${n}</button></div>`
         }
 
-        return `<div class="div${n}"><button>${n}</button></div>`
-
-    }
-    else {
-    //     // return `<p>a1234</p>`
-    console.log("Oie");
-        return `<div class="div${n}"><button>${n}</button></div>`
-    }
+        return `<div class="div${n}"><button class="btn-num">${n}</button></div>`
 }
 
-document.querySelector('#tela').innerHTML =
-    '<div id="tela-nums"><p></p><div id="tela-nums2"><p></p></div></div><div id="tela-op"><p></p></div>'
+//define quais botões serão exibidos
+const botoes = ["e", "µ", "sin", "deg", "Ac", "bkspc", "/", "*", 7, 8, 9, "-", 4, 5, 6, "+", 1, 2, 3, "=", 0, "." ]
 
-
-// $("#botoes-container").append(
-//     criaBotão("e")+ 
-//     criaBotão("µ") +
-//     criaBotão("sin") +
-//     criaBotão("deg") +
-//     criaBotão("Ac") +
-//     criaBotão("bkspc") +
-//     criaBotão("/") +
-//     criaBotão("*") +
-//     criaBotão(7) +
-//     criaBotão(8) +
-//     criaBotão(9) +
-//     criaBotão("-") +
-//     criaBotão(4) +
-//     criaBotão(5) +
-//     criaBotão(6) +
-//     criaBotão("+") +
-//     criaBotão(1) +
-//     criaBotão(2) +
-//     criaBotão(3) +
-//     criaBotão("=") +
-//     criaBotão(0) +
-//     criaBotão(".")
-//     );
-
-// function criaBotões (){
-
-//     for (e in botoes)
-//     {
-//         return criaBotão(e)
-//     }
-
-// }
-const botoes = [1, 2, 3, 4, 5, 6, "var"]
-
+//para cada botão na lista, inserir o resultado de criaBotão() do botão
 for (botao in botoes){
 
     $("#botoes-container").append(criaBotão(botoes[botao]));
 
 }
-
-
-
-
-// $("#botoes-container").append(botoes.forEach(e => {
-//     criaBotão(e);}));
-
-// botoes.forEach(e => criaBotão (1));
-
-// $("#botoes-container").
-
-// for (let index = 0; index < botoes.length; index++) {
-    
-//     criaBotão(botoes[index]);
-    
-// }
