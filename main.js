@@ -19,7 +19,7 @@ jQuery(function () {
         if (estáOperando == false) {
             op = $(this).html();
             $("#tela-nums").append(($(this).html()));
-            estáOperando = true;
+            //estáOperando = true;
         }
     })
 });
@@ -54,9 +54,27 @@ jQuery(function () {
     })
 });
 
+//função AC
 jQuery(function () {
     $(".btn-ac").on("click", function () {
         $("#tela-nums").empty();
+        $("#tela-op").empty();
+        estáOperando = false;
+    })
+});
+
+//função backspace
+jQuery(function () {
+    $(".btn-bkspc").on("click", function () {
+
+        console.log($("#tela-nums").html().slice(0, -1));
+
+        newNum = $("#tela-nums").html().slice(0, -1);
+
+        $("#tela-nums").empty();
+
+        $("#tela-nums").append(newNum);
+        
     })
 });
 
@@ -66,7 +84,7 @@ function criaBotão(n) {
     if (typeof n === "string") {
         if (n == "bkspc") {
 
-            return `<div class="div${n}"><button class="${n}"><img src="ico.svg"></button></div>`
+            return `<div class="div${n}"><button class="btn-${n}"><img src="ico.svg"></button></div>`
         }
 
         if (n == "=") {
